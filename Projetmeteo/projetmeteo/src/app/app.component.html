@@ -1,0 +1,24 @@
+<div>
+  <h1>Météo Actuelle</h1>
+  <input [(ngModel)]="city" placeholder="Entrez le nom de la ville">
+  <button (click)="getWeather()">Rechercher</button>
+
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+
+  <div *ngIf="weatherData">
+    <div>
+      <h2>Ville: {{ weatherData.name }}</h2>
+    </div>
+    <div>
+      <p>Température : {{ weatherData.main.temp }}°C</p>
+    </div>
+    <div>
+      <p>Humidité : {{ weatherData.main.humidity }}%</p>
+    </div>
+    <div>
+      <p>Vent : {{ weatherData.wind.speed }} km/h</p>
+    </div>
+  </div>
+</div>
